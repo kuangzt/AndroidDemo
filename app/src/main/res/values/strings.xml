@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidDemo</string>
+    <string name="testvalueanimation">TestValueAnimation</string>
+    <string name="testobjectanimation">TestObjectAnimation</string>
+</resources>
