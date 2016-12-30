@@ -11,7 +11,7 @@ import android.widget.TextView;
  * @author Davis
  * @Description:
  * @date 2016/11/21 19:28
- * @copyright HAWK
+ * @copyright Davis
  */
 
 public class TouchView extends TextView {

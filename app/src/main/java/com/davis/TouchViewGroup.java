@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
  * @author Davis
  * @Description:
  * @date 2016/11/21 19:27
- * @copyright HAWK
+ * @copyright Davis
  */
 
 public class TouchViewGroup extends LinearLayout {

@@ -13,7 +13,7 @@ import android.view.View;
  * @author Davis
  * @Description:
  * @date 2016/11/21 14:22
- * @copyright HAWK
+ * @copyright Davis
  */
 
 public class ClipView extends View {

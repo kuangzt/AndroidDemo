@@ -18,7 +18,7 @@ import com.davis.R;
  * @author Davis
  * @Description:
  * @date 2016/11/5 15:23
- * @copyright HAWK
+ * @copyright Davis
  */
 
 public class PropertyAnimationActivity extends AppCompatActivity implements View.OnClickListener{

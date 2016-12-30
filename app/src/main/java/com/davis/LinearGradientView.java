@@ -15,7 +15,7 @@ import android.widget.ImageView;
  * @author Davis
  * @Description:
  * @date 2016/12/12 16:14
- * @copyright HAWK
+ * @copyright Davis
  */
 
 public class LinearGradientView extends View {

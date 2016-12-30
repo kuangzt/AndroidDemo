@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <declare-styleable name="ClockView">
+        <attr name="short_scale" format="dimension"></attr>
+        <attr name="long_scale" format="dimension"></attr>
+    </declare-styleable>
+
+</resources>
