@@ -15,13 +15,6 @@ import retrofit.GsonConverterFactory;
 import retrofit.Response;
 import retrofit.Retrofit;
 
-/**
- * @author zengtao.kuang
- * @Description:
- * @date 2017/1/1 18:25
- * @copyright TCL-MIE
- */
-
 public class NetTestActivity extends AppCompatActivity implements View.OnClickListener{
 
     public static final String TAG = NetTestActivity.class.getSimpleName();
