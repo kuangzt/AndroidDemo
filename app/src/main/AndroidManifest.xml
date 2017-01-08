@@ -43,6 +43,14 @@
         </activity>
 
         <activity android:name="com.davis.bazier.BazierActivity" >
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+
+        <activity android:name="com.davis.recyclerview.RecyclerViewDemo" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
