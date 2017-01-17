@@ -13,6 +13,14 @@ buildscript {
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'android'
+            keyPassword 'android'
+            storeFile file('F:/AndroidStudioProjects/AndroidDemo/demo.keystore.jks')
+            storePassword 'android'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "25.0.2"
     defaultConfig {
@@ -27,9 +35,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
-
     lintOptions {
         abortOnError false
     }

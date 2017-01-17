@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.davis.aspect.annotation.DebugTrace;
+import com.davis.aspect.annotation.SingleClick;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onTouchEvent(event);
     }
 
+    @SingleClick
     @Override
     public void onClick(View v) {
         int id = v.getId();
@@ -55,10 +57,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @DebugTrace
     public void test(){
         try{
-            Thread.sleep(1000);
+            Thread.sleep(100);
         }catch (Throwable t){
 
         }
+        Log.e(TAG,"test");
 
     }
 }
