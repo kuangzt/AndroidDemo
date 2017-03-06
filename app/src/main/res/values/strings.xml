@@ -2,4 +2,8 @@
     <string name="app_name">AndroidDemo</string>
     <string name="testvalueanimation">TestValueAnimation</string>
     <string name="testobjectanimation">TestObjectAnimation</string>
+    <string name="assemble">assemble</string>
+    <string name="disassemble">disassemble</string>
+    <string name="main_thread_exception">main thread exception</string>
+    <string name="other_thread_exception">other thread exception</string>
 </resources>
