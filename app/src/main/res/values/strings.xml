@@ -6,4 +6,6 @@
     <string name="disassemble">disassemble</string>
     <string name="main_thread_exception">main thread exception</string>
     <string name="other_thread_exception">other thread exception</string>
+    <string name="bind_service">bind service</string>
+    <string name="get_student">getStudent</string>
 </resources>

@@ -56,6 +56,9 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.0.1'
     compile project(':aspect')
     compile 'org.aspectj:aspectjrt:1.8.9'
+    compile 'com.amitshekhar.android:glide-bitmap-pool:0.0.1'
+    compile project(':aidl')
+    compile project(':aidlserver')
 }
 final def log = project.logger
 final def variants = project.android.applicationVariants
