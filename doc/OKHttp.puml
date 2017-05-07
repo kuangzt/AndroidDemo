@@ -1,0 +1,54 @@
+@startuml
+interface java.lang.Cloneable{
+}
+
+interface okhttp3.Call{
+}
+
+class okhttp3.RealCall{
+}
+
+class okhttp3.OkHttpClient{
+}
+
+interface okhttp3.Interceptor{
+    Response intercept(Chain chain) throws IOException;
+}
+
+interface okhttp3.Interceptor.Chain{
+    Request request();
+
+    Response proceed(Request request) throws IOException;
+
+    Connection connection();
+}
+
+class okhttp3.Request{
+}
+
+class okhttp3.Request.Builder{
+    public okhttp3.Request build();
+}
+
+class okhttp3.Response{
+}
+
+class okhttp3.Response.Builder{
+    public okhttp3.Response build();
+}
+
+okhttp3.Response <-- okhttp3.Response.Builder
+okhttp3.Request <-- okhttp3.Request.Builder
+
+
+okhttp3.Call <|-- okhttp3.RealCall
+okhttp3.Interceptor <|... okhttp3.internal.http.CallServerInterceptor
+okhttp3.Interceptor <|.. okhttp3.internal.http.ConnectInterceptor
+okhttp3.Interceptor <|.. okhttp3.internal.http.CacheInterceptor
+okhttp3.Interceptor <|.. okhttp3.internal.http.BridgeInterceptor
+okhttp3.Interceptor <|.. okhttp3.internal.http.RetryAndFollowUpInterceptor
+
+java.lang.Cloneable <|-- okhttp3.Call
+java.lang.Cloneable <|.. okhttp3.OkHttpClient
+
+@enduml
