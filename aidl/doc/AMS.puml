@@ -1,0 +1,26 @@
+@startuml
+
+interface android.os.IBinder {
+    public IInterface queryLocalInterface(String descriptor);
+}
+class android.os.Binder
+interface android.os.IInterface {
+    public android.os.IBinder asBinder();
+}
+interface android.app.IActivityManager {
+
+}
+abstract android.app.ActivityManagerNative {
+    public static android.app.IActivityManager asInterface(android.os.IBinder obj)
+}
+class android.app.ActivityManagerProxy
+android.os.IBinder <|.. android.os.Binder
+android.os.IBinder <|.. android.os.BinderProxy
+android.os.IInterface <|--- android.app.IActivityManager
+android.os.Binder <|-- android.app.ActivityManagerNative
+android.app.IActivityManager <|.. android.app.ActivityManagerNative
+android.app.IActivityManager <|.. android.app.ActivityManagerProxy
+android.app.ActivityManagerNative <|-- com.android.server.am.ActivityManagerService
+
+
+@enduml

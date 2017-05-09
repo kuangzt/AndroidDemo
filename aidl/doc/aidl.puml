@@ -1,0 +1,28 @@
+@startuml
+
+interface android.os.IBinder {
+    public IInterface queryLocalInterface(String descriptor);
+    public boolean transact(int code, android.os.Parcel data, android.os.Parcel reply, int flags)
+        throws RemoteException;
+}
+class android.os.Binder
+interface android.os.IInterface {
+    public android.os.IBinder asBinder();
+}
+interface com.davis.aidl.IStudentMgr {
+    public com.davis.aidl.Student getStudent(int aNO) throws android.os.RemoteException;
+}
+abstract com.davis.aidl.IStudentMgr.Stub {
+    public static com.davis.aidl.IStudentMgr asInterface(android.os.IBinder obj)
+}
+class com.davis.aidl.IStudentMgr.Stub.Proxy
+
+android.os.IBinder <|.. android.os.Binder
+android.os.IBinder <|.. android.os.BinderProxy
+android.os.IInterface <|--- com.davis.aidl.IStudentMgr
+android.os.Binder <|-- com.davis.aidl.IStudentMgr.Stub
+com.davis.aidl.IStudentMgr <|.. com.davis.aidl.IStudentMgr.Stub
+com.davis.aidl.IStudentMgr <|.. com.davis.aidl.IStudentMgr.Stub.Proxy
+
+
+@enduml
