@@ -1,0 +1,26 @@
+@startuml
+skinparam handwritten true
+skinparam backgroundColor #EEEBDC
+
+actor System
+participant "SystemServer" as SystemServer
+participant "SystemServiceManager" as SystemServiceManager
+participant "Lifecycle" as Lifecycle
+participant "ActivityManagerService" as AMS
+
+System -> SystemServer: main()
+activate SystemServer
+SystemServer -> SystemServer: startBootstrapServices
+
+SystemServer -> SystemServiceManager: startService
+activate SystemServiceManager
+SystemServiceManager -> Lifecycle: onStart
+
+activate Lifecycle
+Lifecycle -> AMS: _start
+
+deactivate SystemServiceManager
+
+
+
+@enduml
