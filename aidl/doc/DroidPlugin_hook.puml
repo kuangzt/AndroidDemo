@@ -1,0 +1,42 @@
+@startuml
+
+abstract class com.morgoo.droidplugin.hook.BaseHookHandle {
+    protected Context mHostContext;
+    protected Map sHookedMethodHandlers;
+    protected abstract void init();
+}
+class com.morgoo.droidplugin.hook.HookedMethodHandler {
+    protected boolean beforeInvoke(Object receiver, Method method, Object[] args) throws Throwable
+}
+class com.morgoo.droidplugin.hook.handle.ReplaceCallingPackageHookedMethodHandler
+com.morgoo.droidplugin.hook.HookedMethodHandler <-- com.morgoo.droidplugin.hook.BaseHookHandle
+com.morgoo.droidplugin.hook.HookedMethodHandler <|-- com.morgoo.droidplugin.hook.handle.ReplaceCallingPackageHookedMethodHandler
+
+class com.morgoo.droidplugin.hook.handle.IActivityManagerHookHandle
+class com.morgoo.droidplugin.hook.handle.IClipboardHookHandle
+com.morgoo.droidplugin.hook.BaseHookHandle <|-- com.morgoo.droidplugin.hook.handle.IActivityManagerHookHandle
+com.morgoo.droidplugin.hook.BaseHookHandle <|-- com.morgoo.droidplugin.hook.handle.IClipboardHookHandle
+class com.morgoo.droidplugin.hook.handle.IClipboardHookHandle.MyBaseHookedMethodHandler
+com.morgoo.droidplugin.hook.HookedMethodHandler <|-- com.morgoo.droidplugin.hook.handle.IClipboardHookHandle.MyBaseHookedMethodHandler
+
+class com.morgoo.droidplugin.hook.handle.IActivityManagerHookHandle.startActivity
+com.morgoo.droidplugin.hook.handle.ReplaceCallingPackageHookedMethodHandler <|-- com.morgoo.droidplugin.hook.handle.IActivityManagerHookHandle.startActivity
+com.morgoo.droidplugin.hook.handle.ReplaceCallingPackageHookedMethodHandler <|-- com.morgoo.droidplugin.hook.handle.IActivityManagerHookHandle.startService
+
+com.morgoo.droidplugin.hook.handle.IClipboardHookHandle.MyBaseHookedMethodHandler <|-- com.morgoo.droidplugin.hook.handle.IClipboardHookHandle.setPrimaryClip
+com.morgoo.droidplugin.hook.handle.IClipboardHookHandle.MyBaseHookedMethodHandler <|-- com.morgoo.droidplugin.hook.handle.IClipboardHookHandle.getPrimaryClip
+
+abstract class com.morgoo.droidplugin.hook.Hook {
+protected abstract void onInstall(ClassLoader classLoader) throws Throwable;
+protected abstract BaseHookHandle createHookHandle();
+}
+abstract class com.morgoo.droidplugin.hook.proxy.ProxyHook
+com.morgoo.droidplugin.hook.Hook <|-- com.morgoo.droidplugin.hook.proxy.ProxyHook
+interface java.lang.reflect.InvocationHandler
+java.lang.reflect.InvocationHandler <|.. com.morgoo.droidplugin.hook.proxy.ProxyHook
+com.morgoo.droidplugin.hook.BaseHookHandle <-- com.morgoo.droidplugin.hook.Hook
+class com.morgoo.droidplugin.hook.proxy.IActivityManagerHook
+com.morgoo.droidplugin.hook.proxy.ProxyHook <|-- com.morgoo.droidplugin.hook.proxy.IActivityManagerHook
+
+
+@enduml
