@@ -9,4 +9,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="start" parent="AppTheme">
+        <!--方式一-->
+        <!--<item name="android:windowBackground">@drawable/start_window</item>-->
+        <!--方式二-->
+        <!--<item name="android:windowDisablePreview">true</item>-->
+        <!--方式三-->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
 </resources>
