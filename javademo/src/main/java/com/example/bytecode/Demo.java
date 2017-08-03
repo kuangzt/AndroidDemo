@@ -1,10 +1,13 @@
 package com.example.bytecode;
 
 /**
- * @author Davis
- * @Description:
- * @date 2017/8/1 下午2:34
- * @copyright HAWK
+ * javac生成class文件，然后用javap -verbose命令查看
  */
-public class Demo {
+public final class Demo {
+
+    private boolean flag = false;
+
+    public boolean getFlag() {
+        return flag;
+    }
 }
