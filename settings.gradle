@@ -1,1 +1,1 @@
-include ':app', ':aspect', ':javademo', ':aidl', ':aidlserver'
+include ':app', ':aspect', ':javademo', ':aidl', ':aidlserver', ':second', ':first'
