@@ -12,6 +12,6 @@ public class AndroidDemoApp extends Application {
     public void onCreate() {
         super.onCreate();
         AppContext.getInstance().setContext(getApplicationContext());
-        SystemClock.sleep(30000);
+        //SystemClock.sleep(30000);
     }
 }
