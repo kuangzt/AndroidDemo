@@ -5,7 +5,7 @@
     <application android:allowBackup="true" android:label="@string/app_name"
         android:supportsRtl="true">
 
-        <service android:name="com.davis.aidl.StudentMgrService" >
+        <service android:name="com.davis.aidl.StudentMgrService" android:process=":aidlserver">
             <intent-filter>
                 <action android:name="android.intent.action.studentserver"></action>
             </intent-filter>
