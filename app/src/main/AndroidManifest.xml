@@ -79,11 +79,11 @@
 
 
         <activity android:name="com.davis.aidl.AIDLDemoActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
 
         <activity android:name=".StartActivity" android:theme="@style/start">
@@ -93,6 +93,14 @@
 
                 <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
+        </activity>
+
+        <activity android:name=".fragment.TestFragmentActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
