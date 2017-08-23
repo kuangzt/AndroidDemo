@@ -4,17 +4,17 @@ import android.util.SparseArray;
 import android.view.View;
 
 public final class ViewHolder {
-    public static <T > T getView(View view,int id){
+    public static <T extends View> T getView(View view, int id) {
         SparseArray<View> viewHolder = (SparseArray<View>) view.getTag();
-        if(viewHolder==null){
+        if (viewHolder == null) {
             viewHolder = new SparseArray<View>();
             view.setTag(viewHolder);
         }
         View idView = viewHolder.get(id);
-        if(idView==null){
+        if (idView == null) {
             idView = view.findViewById(id);
-            viewHolder.put(id,idView);
+            viewHolder.put(id, idView);
         }
-        return (T)idView;
+        return (T) idView;
     }
 }
