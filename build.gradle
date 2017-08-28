@@ -12,6 +12,15 @@ buildscript {
     }
 }
 
+ext {
+    minSdkVersion = 14
+    compileSdkVersion = 26
+    targetSdkVersion = 26
+    buildToolsVersion = '26.0.0'
+    sourceCompatibility = JavaVersion.VERSION_1_7
+}
+
+
 allprojects {
     repositories {
         jcenter()

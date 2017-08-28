@@ -17,20 +17,29 @@ android {
         config {
             keyAlias 'android'
             keyPassword 'android'
-            storeFile file('F:/AndroidStudioProjects/AndroidDemo/demo.keystore.jks')
+            storeFile file('./demo.keystore.jks')
             storePassword 'android'
         }
     }
-    compileSdkVersion 23
-    buildToolsVersion "25.0.2"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
     defaultConfig {
         applicationId "com.davis"
-        minSdkVersion 14
-        targetSdkVersion 23
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.sourceCompatibility
+        targetCompatibility rootProject.ext.sourceCompatibility
+    }
+
     buildTypes {
         release {
             minifyEnabled false
