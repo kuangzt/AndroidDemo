@@ -1,3 +1,4 @@
+apply from: rootProject.file("core.gradle")
 import org.aspectj.bridge.IMessage
 import org.aspectj.bridge.MessageHandler
 import org.aspectj.tools.ajc.Main
@@ -57,15 +58,15 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:23.0.1'
-    compile 'com.squareup.retrofit:retrofit:2.0.0-beta1'
-    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta1'
-    compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta1'
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:recyclerview-v7:23.0.1'
+    compile dep.appcompatV7
+    compile dep.retrofit
+    compile dep.retrofitConverterGson
+    compile dep.rettrofitAdapterRxjava
+    testCompile dep.junit
+    compile dep.appcompatV7Recyclerview
     compile project(':aspect')
-    compile 'org.aspectj:aspectjrt:1.8.9'
-    compile 'com.amitshekhar.android:glide-bitmap-pool:0.0.1'
+    compile dep.aspectjrt
+    compile dep.glideBitmapPool
     compile project(':aidl')
     compile project(':aidlserver')
 }
