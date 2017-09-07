@@ -1,0 +1,27 @@
+@startuml
+
+interface android.os.IBinder {
+    public IInterface queryLocalInterface(String descriptor);
+}
+class android.os.Binder
+interface android.os.IInterface {
+    public android.os.IBinder asBinder();
+}
+interface android.content.pm.IPackageManager {
+
+}
+note right: IPackageManager.aidl
+abstract android.content.pm.IPackageManager.Stub {
+    public static android.app.IApplicationThread asInterface(android.os.IBinder obj)
+}
+class android.content.pm.IPackageManager.Proxy
+android.os.IBinder <|.. android.os.Binder
+android.os.IBinder <|.. android.os.BinderProxy
+android.os.IInterface <|--- android.content.pm.IPackageManager
+android.os.Binder <|-- android.content.pm.IPackageManager.Stub
+android.content.pm.IPackageManager <|.. android.content.pm.IPackageManager.Stub
+android.content.pm.IPackageManager <|.. android.content.pm.IPackageManager.Proxy
+android.content.pm.IPackageManager.Stub <|-- com.android.server.pm.PackageManagerService
+
+
+@enduml
