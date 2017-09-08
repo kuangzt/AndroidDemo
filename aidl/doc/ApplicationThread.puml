@@ -1,0 +1,28 @@
+@startuml
+
+interface android.os.IBinder {
+    public IInterface queryLocalInterface(String descriptor);
+}
+class android.os.Binder
+interface android.os.IInterface {
+    public android.os.IBinder asBinder();
+}
+interface android.app.IApplicationThread {
+
+}
+abstract android.app.ApplicationThreadNative {
+    public static android.app.IApplicationThread asInterface(android.os.IBinder obj)
+}
+class android.app.ApplicationThreadProxy
+note right: ApplicationThreadProxy是android.app.ApplicationThreadNative的内部类
+android.os.IBinder <|.. android.os.Binder
+android.os.IBinder <|.. android.os.BinderProxy
+android.os.IInterface <|--- android.app.IApplicationThread
+android.os.Binder <|-- android.app.ApplicationThreadNative
+android.app.IApplicationThread <|.. android.app.ApplicationThreadNative
+android.app.IApplicationThread <|.. android.app.ApplicationThreadProxy
+android.app.ApplicationThreadNative <|-- android.app.ApplicationThread
+
+note right: ApplicationThread是android.app.ActivityThread内部类
+
+@enduml
