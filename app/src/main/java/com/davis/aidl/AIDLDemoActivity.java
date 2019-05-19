@@ -2,8 +2,6 @@ package com.davis.aidl;
 
 import android.app.Activity;
 import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Binder;
 import android.os.Bundle;
@@ -14,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.davis.R;
+import com.davis.base.AppContext;
 
 public class AIDLDemoActivity extends Activity implements View.OnClickListener {
 
@@ -67,9 +66,22 @@ public class AIDLDemoActivity extends Activity implements View.OnClickListener {
         int id = v.getId();
         switch (id) {
             case R.id.bind_service:
-                Intent intent = new Intent("android.intent.action.studentserver");
-                intent.setPackage(getPackageName());
-                bindService(intent, connection, Context.BIND_AUTO_CREATE);
+//                Intent intent = new Intent("android.intent.action.studentserver");
+//                intent.setPackage(getPackageName());
+//                bindService(intent, connection, Context.BIND_AUTO_CREATE);
+                BinderPoolMgr binderPoolMgr = BinderPoolMgr.getInstance();
+                binderPoolMgr.setAppContext(AppContext.getInstance().getContext());
+                binderPoolMgr.setServiceAction("android.intent.action.bindpool");
+                IBinder binder = (IBinder) binderPoolMgr.queryBinder("stuMgr");
+                if (binder != null) {
+                    try {
+                        Student student = IStudentMgr.Stub.asInterface(binder).getStudent(1);
+                        Log.e("TAG",""+student.getNO());
+                    } catch (RemoteException re) {
+
+                    }
+
+                }
                 break;
             case R.id.login:
                 if (mMgr != null) {
@@ -118,7 +130,6 @@ public class AIDLDemoActivity extends Activity implements View.OnClickListener {
                     } catch (RemoteException remoteException) {
 
                     }
-
                 }
                 break;
         }

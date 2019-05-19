@@ -19,11 +19,11 @@
         android:theme="@style/AppTheme"
         android:name=".AndroidDemoApp">
         <activity android:name=".MainActivity" >
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
 
         <activity android:name=".propertyanimation.PropertyAnimationActivity">
@@ -59,11 +59,11 @@
         </activity>
 
         <activity android:name="com.davis.recyclerview.RecyclerViewDemo" >
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
 
         <activity android:name=".crash.CrashActivity">
@@ -84,11 +84,11 @@
 
 
         <activity android:name="com.davis.aidl.AIDLDemoActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity android:name=".StartActivity" android:theme="@style/start">

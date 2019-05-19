@@ -11,6 +11,13 @@
             </intent-filter>
 
         </service>
+
+        <service android:name="com.davis.aidl.BinderPoolService" android:process=":aidlserver">
+            <intent-filter>
+                <action android:name="android.intent.action.bindpool"></action>
+            </intent-filter>
+
+        </service>
     </application>
 
 </manifest>
