@@ -1,24 +1,28 @@
 package com.example;
 
-import java.util.Arrays;
+//
+//public static void  main(String[] args){
+//        System.out.print("main");
+//        int[] data = new int[]{10,5,8,6,3,89,66,32,0,0,0,0,0,0,89,88};
+//        heapSort(data);
+//        System.out.print("sort"+ Arrays.toString(data));
+//        }
 
-public class HeapSortTest {
-    public static void  main(String[] args){
-        System.out.print("main");
-        int[] data = new int[]{10,5,8,6,3,89,66,32,0,0,0,0,0,0,89,88};
-        heapSort(data);
-        System.out.print("sort"+ Arrays.toString(data));
+public final class HeapSort {
+
+    private HeapSort() {
+
     }
 
     public static void heapSort(int[] data){
         int length = data.length;
         for(int i=length/2-1;i>=0;i--){
-            adustHeap(data,i,length);
+            adjust(data,i,length);
         }
 
         for(int i=0;i<length;i++){
             swap(data,0,length-i-1);
-            adustHeap(data,0,length-i-1);
+            adjust(data,0,length-i-1);
         }
     }
 
@@ -28,7 +32,7 @@ public class HeapSortTest {
         data[index2] = temp;
     }
 
-    private static void adustHeap(int[] data,int index,int n){
+    private static void adjust(int[] data, int index, int n){//调整堆
         int temp = data[index];
         int childIndex = 0;
         while( index*2+1<n ){
